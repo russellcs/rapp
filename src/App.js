@@ -24,8 +24,8 @@ const App = () => {
     }, 1000);
 
     //get initial data
-    const _dataController = new DataController();
-    _dataController.init();
+    // const _dataController = new DataController();
+    // _dataController.init();
   }, []);
 
   return (

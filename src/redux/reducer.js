@@ -68,12 +68,13 @@ export function reducer(state = getItem("store") || initialState, action) {
     }
 
     case BLOCK_USER: {
-      const blocked = [...state.user.blocked];
+      const user = { ...state.user };
 
-      blocked.push(action.payload);
+      if (user.blocked.includes(action.payload)) return state; //user already blocked
 
-      const newState = { ...state };
-      state.user.blocked = blocked;
+      user.blocked.push(action.payload);
+
+      const newState = { ...state, user };
 
       storeItem("store", newState);
 

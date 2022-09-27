@@ -7,6 +7,8 @@ const Contacts = () => {
   const allUsers = useSelector((state) => state.allUsers);
   const user = useSelector((state) => state.user);
 
+  console.log(user);
+
   //remove blocked from friends
   const friends = user.friends.filter((friend) => {
     return !user.blocked.includes(friend);
@@ -16,6 +18,8 @@ const Contacts = () => {
   const results = allUsers.filter((person) => {
     return friends.includes(person.id);
   });
+
+  console.log(results);
 
   return (
     <>
