@@ -1,5 +1,10 @@
 //define the data structure
-export const user = {};
+export const user = {
+  friends: [1, 2, 3],
+  blocked: [],
+  id: 1,
+  userName: "dddadasdsa",
+};
 
 export const allUsers = [
   { id: 1, userName: "Sally", image: "" },

@@ -1,6 +1,7 @@
 export const ADD_CONTACT = "ADD_CONTACT"; //current user states they are connected to foreign user
 export const REPORT_CONTACT = "REPORT_CONTACT";
 export const DELETE_CONTACT = "DELETE_CONTACT";
+export const BLOCK_USER = "BLOCK_USER";
 
 export const SEND_MESSAGE = "SEND_MESSAGE";
 export const DELETE_MESSAGE = "DELETE MESSAGE";
@@ -11,3 +12,8 @@ export const UPDATE_USER = "UPDATE_USER";
 export const DELETE_USER = "DELETE_USER"; // terminate account
 
 export const SET_LOADING = "SET_LOADING";
+
+//actions as result of api calls
+export const SET_ALL_USERS = "SET_ALL_USERS";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const SET_USER_MESSAGES = "SET_USER_MESSAGES";

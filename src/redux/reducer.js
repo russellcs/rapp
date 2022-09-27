@@ -10,7 +10,10 @@ import {
   SEND_MESSAGE,
   ADD_CONTACT,
   DELETE_CONTACT,
-  SET_LOADING,
+  SET_CURRENT_USER,
+  SET_ALL_USERS,
+  SET_USER_MESSAGES,
+  BLOCK_USER,
 } from "./types";
 import { generateRandomId } from "../utils";
 
@@ -18,7 +21,7 @@ export function reducer(state = getItem("store") || initialState, action) {
   switch (action.type) {
     case DELETE_CONTACT: {
       //defensive check
-      if (!user.friends) return state;
+      // if (!user.friends) return state;
 
       const user = { ...state.user };
 
@@ -64,10 +67,24 @@ export function reducer(state = getItem("store") || initialState, action) {
       return newState;
     }
 
+    case BLOCK_USER: {
+      const blocked = [...state.user.blocked];
+
+      blocked.push(action.payload);
+
+      const newState = { ...state };
+      state.user.blocked = blocked;
+
+      storeItem("store", newState);
+
+      return newState;
+    }
+
     case ADD_USER: {
       const user = {
         id: generateRandomId(64),
         userName: action.payload,
+        blocked: [2],
       };
 
       const newState = { ...state, user, screenMode: 4 };
@@ -130,6 +147,22 @@ export function reducer(state = getItem("store") || initialState, action) {
 
       storeItem("store", newState);
 
+      return newState;
+    }
+
+    case SET_CURRENT_USER: {
+      const newState = { ...state, user: action.payload };
+      storeItem("store", newState);
+      return newState;
+    }
+    case SET_ALL_USERS: {
+      const newState = { ...state, users: action.payload };
+      storeItem("store", newState);
+      return newState;
+    }
+    case SET_USER_MESSAGES: {
+      const newState = { ...state, messages: action.payload };
+      storeItem("store", newState);
       return newState;
     }
 
