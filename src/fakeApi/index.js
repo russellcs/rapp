@@ -13,6 +13,10 @@ export const allUsers = [
 ];
 
 export const messages = [
-  { fromId: 0, toId: 1, content: "Hi", sendDate: 12345678 },
-  { fromId: 1, toId: 0, content: "Hi back to you!", sendDate: 12345678 },
+  { fromId: 1, toId: 2, content: "1Hi", sendDate: 12345678 },
+  { fromId: 2, toId: 1, content: "2Hi back to you!", sendDate: 12345678 },
+  { fromId: 1, toId: 3, content: "3Hi", sendDate: 12345678 },
+  { fromId: 3, toId: 1, content: "4Hi back to you!", sendDate: 12345678 },
+  { fromId: 3, toId: 2, content: "5Hi", sendDate: 12345678 },
+  { fromId: 2, toId: 3, content: "6Hi back to you!", sendDate: 12345678 },
 ];
