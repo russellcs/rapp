@@ -3,7 +3,7 @@ import Naviation from "./Navigation";
 import { useSelector } from "react-redux";
 
 const Messaging = () => {
-  const [foreignUser, setForeignUser] = useState(2);
+  const [foreignUser, setForeignUser] = useState(1);
 
   const messages = useSelector((state) => state.messages);
   const user = useSelector((state) => state.user);
@@ -18,12 +18,13 @@ const Messaging = () => {
   userMessages.forEach((message) => {
     const direction = message.fromId === user.id ? "In" : "Out";
     console.log(">>>", direction);
+    console.log(message.content);
   });
 
   return (
     <>
-      Messaging
-      <Naviation />
+      {/* <Naviation /> */}
+      <h2>Your messages</h2>
     </>
   );
 };

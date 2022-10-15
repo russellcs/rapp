@@ -23,8 +23,8 @@ const Contacts = () => {
 
   return (
     <>
-      Contacts
-      <Naviation />
+      {/* <Naviation /> */}
+      <h2>Contacts</h2>
       {results.length > 0 ? (
         <Results results={results} />
       ) : (
