@@ -18,7 +18,7 @@ const User = ({ result }) => {
             width={50}
             className="me-3"
           />
-          <h3>{result.userName}</h3>
+          <p style={{ "font-weight": "bold" }}>{result.userName}</p>
 
           {console.log(result.image)}
         </Col>
