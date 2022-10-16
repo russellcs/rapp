@@ -10,6 +10,7 @@ const SearchBar = ({ setSearchTerm }) => {
       }}
       type="text"
       placeholder="Search..."
+      className="my-3"
     />
   );
 };

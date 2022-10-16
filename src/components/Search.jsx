@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import SearchBar from "./Search/SearchBar";
 import Results from "./Search/Results";
 import { useSelector } from "react-redux";
+import { Container } from "react-bootstrap";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +20,7 @@ const Search = () => {
   });
 
   return (
-    <>
+    <Container className="">
       {/* <Navigation /> */}
       <h2>Search users</h2>
       <SearchBar setSearchTerm={setSearchTerm} />
@@ -28,7 +29,7 @@ const Search = () => {
       ) : (
         <p>Sorry, no friends found</p>
       )}
-    </>
+    </Container>
   );
 };
 

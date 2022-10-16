@@ -21,19 +21,19 @@ const User = ({ result }) => {
 
   return (
     <Container style={{ width: "100%" }}>
-      <Row className="d-flex justify-content-center border-top">
-        <Col className="d-flex justify-content-start p-0 align-items-center px-3">
+      <Row className="d-flex justify-content-center align-items-center border-top p-0">
+        <Col className="d-flex justify-content-start align-items-center px-0 py-3">
           <img
             src={result.image}
             alt={`${result.userName}'s Photo`}
             width={50}
-            style={{ "margin-right": "16px" }}
+            className="me-3"
           />
           <p style={{ "font-weight": "bold" }}>{result.userName}</p>
 
           {console.log(result.image)}
         </Col>
-        <Col className="d-flex justify-content-end p-3">
+        <Col className="d-flex justify-content-end p-0 py-3">
           <Button variant="success" size="sm" onClick={onBlock}>
             {blockClick ? "Confirm" : "Block"}
           </Button>

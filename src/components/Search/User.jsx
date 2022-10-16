@@ -10,14 +10,19 @@ const User = ({ result }) => {
 
   return (
     <Container style={{ width: "100%" }}>
-      <Row className="d-flex justify-content-center border-top">
-        <Col className="d-flex justify-content-start p-0 align-items-center">
-          <img src={result.image} alt={result.image} width={50} />
+      <Row className="d-flex justify-content-center align-items-center border-top p-0">
+        <Col className="d-flex justify-content-start align-items-center px-0 py-3">
+          <img
+            src={result.image}
+            alt={result.image}
+            width={50}
+            className="me-3"
+          />
           <h3>{result.userName}</h3>
 
           {console.log(result.image)}
         </Col>
-        <Col className="d-flex justify-content-end p-3">
+        <Col className="d-flex justify-content-end p-0 py-3">
           <Button
             variant="success"
             size="sm"

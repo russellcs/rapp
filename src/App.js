@@ -38,17 +38,16 @@ const App = () => {
 
   return (
     <Container
-      className="p-3 d-flex flex-column justify-content-between"
+      className="p-3 d-flex flex-column justify-content-between bg-light"
       style={{ "block-size": "100vh" }}
     >
       <Row style={{ "overflow-y": "scroll" }}>
         {loading ? <Startup /> : <Interface />}
       </Row>
       <Row className="d-flex">
-        <Col>
-          <Naviation />
-        </Col>
-        <Col className="d-flex justify-content-end">
+        <Naviation />
+
+        {/* <Col className="d-flex justify-content-end">
           <Button
             size="sm"
             variant="success"
@@ -56,7 +55,7 @@ const App = () => {
           >
             Clear localStorage
           </Button>
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   );

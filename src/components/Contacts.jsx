@@ -2,6 +2,7 @@ import React from "react";
 import Naviation from "./Navigation";
 import { useSelector } from "react-redux";
 import Results from "./Contacts/Results";
+import { Container } from "react-bootstrap";
 
 const Contacts = () => {
   const allUsers = useSelector((state) => state.allUsers);
@@ -22,15 +23,15 @@ const Contacts = () => {
   console.log(results);
 
   return (
-    <>
+    <Container>
       {/* <Naviation /> */}
-      <h2>Contacts</h2>
+      <h2 className="pb-3">Contacts</h2>
       {results.length > 0 ? (
         <Results results={results} />
       ) : (
         <p>Sorry, no friends found</p>
       )}
-    </>
+    </Container>
   );
 };
 

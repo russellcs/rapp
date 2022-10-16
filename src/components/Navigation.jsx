@@ -9,7 +9,11 @@ const Naviation = () => {
   const screenMode = useSelector((state) => state.screenMode);
 
   return (
-    <Stack direction="horizontal" gap={3}>
+    <Stack
+      className="border-top pt-3 d-flex justify-content-center"
+      direction="horizontal"
+      gap={3}
+    >
       {screenMode !== 2 && (
         <Button
           size="sm"
@@ -34,11 +38,15 @@ const Naviation = () => {
         <Button
           size="sm"
           variant="success"
+          colo
           onClick={() => dispatch({ type: SET_SCREEN_MODE, payload: 4 })}
         >
           Search
         </Button>
       )}
+      <Button size="sm" variant="success" onClick={() => localStorage.clear()}>
+        Clear localStorage
+      </Button>
     </Stack>
   );
 };
